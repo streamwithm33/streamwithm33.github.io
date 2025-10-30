@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HAYA WAY COACHING — Mahaya</title>
+  <style>
+    :root{
+      --primary:#3c1e59;     /* Deep purple */
+      --accent:#620191;      /* Violet accent */
+      --ink:#17171a;         /* Headings */
+      --cocoa:#463c3c;       /* Body text */
+      --sand:#d2c8c6;        /* Borders/cards */
+      --snow:#f6f7f7;        /* Background */
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--snow);color:var(--cocoa);line-height:1.6}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--ink)}
+    .brand svg{width:32px;height:32px;border-radius:50%}
+    nav a{margin-left:16px;color:var(--ink);text-decoration:none}
+    nav a:hover{color:var(--accent)}
+    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:32px;align-items:center;padding:40px 0}
+    .hero h1{font-size:clamp(32px,5vw,60px);line-height:1.05;margin:0 0 12px 0;color:var(--ink)}
+    .grad{background:linear-gradient(90deg,var(--accent),var(--primary));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .cta{display:flex;gap:12px;margin-top:12px}
+    .btn{padding:12px 18px;border-radius:12px;border:1px solid var(--primary);background:var(--primary);color:#fff;text-decoration:none;font-weight:600}
+    .btn.secondary{background:transparent;color:var(--primary)}
+    .btn:hover{filter:brightness(1.05)}
+    section{padding:28px 0;border-top:1px solid var(--sand)}
+    h2{margin:0 0 8px 0;color:var(--ink)}
+    .card{background:#fff;border:1px solid var(--sand);border-radius:14px;padding:18px}
+    footer{border-top:1px solid var(--sand);padding:24px 0;font-size:14px;color:#6b6b6b}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <!-- Simple circular mark; replace with your logo.png later -->
+        <svg viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="16" fill="url(#g)"/><defs>
+            <linearGradient id="g" x1="0" x2="32" y1="0" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#620191"/><stop offset="1" stop-color="#3c1e59"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>HAYA WAY COACHING</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#results">Results</a>
+        <a href="#about">About</a>
+        <a class="btn" href="PASTE_YOUR_ZOHO_BOOKING_LINK" style="margin-left:16px;">Book now</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1>From <span class="grad">stuck</span> to <span class="grad">unstoppable</span>.</h1>
+        <p>I help founders cut noise, make brave decisions, and deliver outcomes — clear plans, focused work, weekly progress.</p>
+        <div class="cta">
+          <a class="btn" href="PASTE_YOUR_ZOHO_BOOKING_LINK">Book a session</a>
+          <a class="btn secondary" href="#services">See programs</a>
+        </div>
+      </div>
+      <div class="card">
+        <strong>What you get</strong>
+        <ul>
+          <li>Straight talk + a simple plan for the next 3 moves</li>
+          <li>Focused working sessions (no fluff)</li>
+          <li>Visible progress every week</li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="card">
+        <p><strong>Clarity Sprint (2×60)</strong> — unblock top priorities fast. <a href="PASTE_STRIPE_LINK_FOR_SPRINT">Pay</a></p>
+        <p><strong>Momentum Coaching (8 weeks)</strong> — ship the meaningful thing. <a href="PASTE_STRIPE_LINK_FOR_MOMENTUM">Pay</a></p>
+        <p><strong>VIP Day (4h)</strong> — deep dive + 90-day plan. <a href="PASTE_STRIPE_LINK_FOR_VIP">Pay</a></p>
+      </div>
+    </section>
+
+    <section id="process">
+      <h2>Process</h2>
+      <ol>
+        <li>Book a session → confirm instantly.</li>
+        <li>Complete a 10-minute pre-work form.</li>
+        <li>We meet, make decisions, and lock execution.</li>
+      </ol>
+    </section>
+
+    <section id="results">
+      <h2>Results</h2>
+      <div class="card">Short, sharp, and practical. Clients leave with clarity, confidence, and tangible momentum.</div>
+    </section>
+
+    <section id="about">
+      <h2>About Mahaya</h2>
+      <p>I’m a strategist-operator. I jump in the trenches, bring structure, and turn fuzzy goals into your next three moves.</p>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Haya Way Coaching • <a href="PASTE_YOUR_ZOHO_BOOKING_LINK">Book now</a>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
