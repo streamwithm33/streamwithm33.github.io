@@ -1,120 +1,476 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>THE HAYA WAY COACHING — Mahaya</title>
-  <style>
-   :root{
-  --primary:#3c1e59;   /* Deep Purple — primary brand */
-  --accent:#620191;    /* Violet — accent/gradients */
-  --ink:#17171a;       /* Headings */
-  --cocoa:#463c3c;     /* Body text */
-  --sand:#d2c8c6;      /* Borders/cards */
-  --snow:#f6f7f7;      /* Background */
-}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;background:var(--snow);color:var(--cocoa);line-height:1.6}
-    .wrap{max-width:1080px;margin:0 auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--ink)}
-    .brand svg{width:32px;height:32px;border-radius:50%}
-    nav a{margin-left:16px;color:var(--ink);text-decoration:none}
-    nav a:hover{color:var(--accent)}
-    .hero{display:grid;grid-template-columns:1.1fr 0.9fr;gap:32px;align-items:center;padding:40px 0}
-    .hero h1{font-size:clamp(32px,5vw,60px);line-height:1.05;margin:0 0 12px 0;color:var(--ink)}
-.grad{
-  background:linear-gradient(90deg,var(--accent),var(--primary));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-    .cta{display:flex;gap:12px;margin-top:12px}
-    .btn{padding:12px 18px;border-radius:12px;border:1px solid var(--primary);background:var(--primary);color:#fff;text-decoration:none;font-weight:600}
-    .btn.secondary{background:transparent;color:var(--primary)}
-    .btn:hover{filter:brightness(1.05)}
-    section{padding:28px 0;border-top:1px solid var(--sand)}
-    h2{margin:0 0 8px 0;color:var(--ink)}
-    .card{background:#fff;border:1px solid var(--sand);border-radius:14px;padding:18px}
-    footer{border-top:1px solid var(--sand);padding:24px 0;font-size:14px;color:#6b6b6b}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-  <div class="wrap">
+import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import mahayaPortrait from "figma:asset/2b049685f7e89c29c546706f958f6039ad9d66b9.png";
+import HayaLogoSvg from "figma:asset/d00fd2f8f78cc75ae488be8df0b9aff5d0bc6c53.svg";
 
-    <header>
-      <div class="brand">
-        <!-- Simple circular mark; replace with your logo.png later -->
-        <svg viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="16" r="16" fill="url(#g)"/><defs>
-            <linearGradient id="g" x1="0" x2="32" y1="0" y2="32" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#620191"/><stop offset="1" stop-color="#3c1e59"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span>THE HAYA WAY COACHING</span>
-      </div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#results">Results</a>
-        <a href="#about">About</a>
-        <a class="btn" href="https://calendly.com/mahaya/30min" style="margin-left:16px;">Book now</a>
-      </nav>
-    </header>
-
-    <div class="hero">
-      <div>
-        <h1>From <span class="grad">stuck</span> to <span class="grad">unstoppable</span>.</h1>
-        <p>I help founders cut noise, make brave decisions, and deliver outcomes — clear plans, focused work, weekly progress.</p>
-        <div class="cta">
-          <a class="btn" href="https://calendly.com/mahaya/30min">Book a session</a>
-          <a class="btn secondary" href="#services">See programs</a>
+export default function MahayaSite() {
+  return (
+    <div className="min-h-screen bg-[#F6F7F7] text-[#463C3C]">
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-[#D2C8C6]">
+        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img
+              src={HayaLogoSvg}
+              alt="Haya Way Coaching"
+              className="h-[30px] md:h-[46px] w-auto"
+            />
+            <span className="font-bold tracking-[0.02em] text-[#17171A]">
+              HAYA WAY COACHING
+            </span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a
+              href="#services"
+              className="text-[#463C3C] hover:text-[#620191] hover:underline"
+            >
+              Services
+            </a>
+            <a
+              href="#process"
+              className="text-[#463C3C] hover:text-[#620191] hover:underline"
+            >
+              Process
+            </a>
+            <a
+              href="#results"
+              className="text-[#463C3C] hover:text-[#620191] hover:underline"
+            >
+              Results
+            </a>
+            <a
+              href="#about"
+              className="text-[#463C3C] hover:text-[#620191] hover:underline"
+            >
+              About
+            </a>
+            <a
+              href="#faq"
+              className="text-[#463C3C] hover:text-[#620191] hover:underline"
+            >
+              FAQ
+            </a>
+            <a
+              href="#cta"
+              className="inline-flex items-center rounded-full bg-[#620191] px-4 py-1.5 text-white hover:bg-[#3C1E59]"
+            >
+              Book now
+            </a>
+          </nav>
         </div>
-      </div>
-      <div class="card">
-        <strong>What you get</strong>
-        <ul>
-          <li>Straight talk + a simple plan for the next 3 moves</li>
-          <li>Focused working sessions (no fluff)</li>
-          <li>Visible progress every week</li>
-        </ul>
-      </div>
+      </header>
+
+      {/* Hero */}
+      <section id="hero" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-semibold leading-tight tracking-tight text-[#17171A]">
+              From <span className="text-[#620191]">stuck</span>{" "}
+              to{" "}
+              <span className="bg-gradient-to-r from-[#620191] to-[#3C1E59] bg-clip-text text-transparent">
+                unstoppable
+              </span>
+              .
+            </h1>
+            <p className="mt-5 text-[#463C3C] text-lg">
+              I help founders cut noise, make brave decisions,
+              and deliver outcomes — clear plans, focused work,
+              weekly progress.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://mahayacoaching.zohobookings.com/#/4698136000000045076"
+                className="inline-flex items-center rounded-full bg-[#620191] px-5 py-3 text-white hover:bg-[#3C1E59]"
+              >
+                Book a session
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center rounded-full border border-[#620191] px-5 py-3 text-[#620191] bg-white hover:bg-[#F6F7F7]"
+              >
+                See programs
+              </a>
+            </div>
+            <p className="mt-6 text-sm text-[#463C3C]">
+              Tagline: "Helping you move from stuck to
+              unstoppable."
+            </p>
+          </div>
+          <div>
+            <ImageWithFallback
+              src="ENTER IMAGE LOGO"
+              alt="Professional business coaching session"
+              className="aspect-[16/10] w-full overflow-hidden rounded-2xl object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="bg-[#F6F7F7]">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#17171A]">
+            Programs
+          </h2>
+          <p className="mt-3 text-[#463C3C] max-w-2xl">
+            Choose the path that fits your momentum
+            target—two‑session sprint, 8‑week program, or
+            focused VIP Day.
+          </p>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-6">
+            {/* Clarity Sprint */}
+            <article className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6 flex flex-col">
+              <h3 className="text-xl font-semibold text-[#17171A]">
+                Clarity Sprint — 2×60 min
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                Rapid diagnosis of your offer, funnel, and
+                operations. Prioritized blockers + a 90‑day
+                plan.
+              </p>
+              <ul className="mt-4 text-sm text-[#463C3C] list-disc list-inside">
+                <li>Two focused working sessions</li>
+                <li>Mini‑audit + actionable roadmap</li>
+              </ul>
+              <p className="mt-4 text-sm text-[#463C3C]">
+                Investment:{" "}
+                <span className="font-medium">USD $425</span>{" "}
+                (CAD $575)
+              </p>
+              <div className="mt-auto pt-6 flex flex-col gap-2">
+                <a
+                  href="https://mahayacoaching.zohobookings.com/#/4698136000000045076"
+                  className="inline-flex items-center justify-center rounded-full bg-[#620191] px-5 py-2.5 text-white hover:bg-[#3C1E59]"
+                >
+                  Book Session 1
+                </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="https://buy.stripe.com/00w7sN1NZbLRevfb063cc00"
+                    className="rounded-full border border-[#D2C8C6] px-4 py-2 text-sm text-[#17171A] hover:border-[#620191] text-center"
+                  >
+                    Pay USD
+                  </a>
+                  <a
+                    href="https://buy.stripe.com/7sY7sNgIT3fl2Mxfgm3cc03"
+                    className="rounded-full border border-[#D2C8C6] px-4 py-2 text-sm text-[#17171A] hover:border-[#620191] text-center"
+                  >
+                    Pay CAD
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* Momentum */}
+            <article className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6 flex flex-col">
+              <h3 className="text-xl font-semibold text-[#17171A]">
+                Momentum — 8 weeks
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                Ship one meaningful milestone with weekly
+                adjustments and accountability.
+              </p>
+              <ul className="mt-4 text-sm text-[#463C3C] list-disc list-inside">
+                <li>8×60 weekly sessions</li>
+                <li>Shared tracker + shipped assets</li>
+                <li>Milestones at 30/60/90 days</li>
+              </ul>
+              <p className="mt-4 text-sm text-[#463C3C]">
+                Investment:{" "}
+                <span className="font-medium">USD $1,500</span>{" "}
+                (CAD $2,025)
+              </p>
+              <div className="mt-auto pt-6 flex flex-col gap-2">
+                <a
+                  href="https://mahayacoaching.zohobookings.com/#/4698136000000045448"
+                  className="inline-flex items-center justify-center rounded-full bg-[#620191] px-5 py-2.5 text-white hover:bg-[#3C1E59]"
+                >
+                  Book Kickoff
+                </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="https://buy.stripe.com/bJe14pbozcPV86R8RY3cc01"
+                    className="rounded-full border border-[#D2C8C6] px-4 py-2 text-sm text-[#17171A] hover:border-[#620191] text-center"
+                  >
+                    Pay USD
+                  </a>
+                  <a
+                    href="https://buy.stripe.com/fZufZjfEP039cn75FM3cc04"
+                    className="rounded-full border border-[#D2C8C6] px-4 py-2 text-sm text-[#17171A] hover:border-[#620191] text-center"
+                  >
+                    Pay CAD
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* VIP Day */}
+            <article className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6 flex flex-col">
+              <h3 className="text-xl font-semibold text-[#17171A]">
+                VIP Day — 4 hours
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                Deep dive + build + a 90‑day plan in one focused
+                day. Includes 30‑min follow‑up.
+              </p>
+              <ul className="mt-4 text-sm text-[#463C3C] list-disc list-inside">
+                <li>90‑90‑60 run of show</li>
+                <li>Assets/templates delivered</li>
+              </ul>
+              <p className="mt-4 text-sm text-[#463C3C]">
+                Investment:{" "}
+                <span className="font-medium">USD $975</span>{" "}
+                (CAD $1,315)
+              </p>
+              <div className="mt-auto pt-6 flex flex-col gap-2">
+                <a
+                  href="https://mahayacoaching.zohobookings.com/#/4698136000000045484"
+                  className="inline-flex items-center justify-center rounded-full bg-[#620191] px-5 py-2.5 text-white hover:bg-[#3C1E59]"
+                >
+                  Book VIP Day
+                </a>
+                <div className="grid grid-cols-2 gap-2">
+                  <a
+                    href="https://buy.stripe.com/dRm6oJakvg270Ep0ls3cc02"
+                    className="rounded-full border border-[#D2C8C6] px-4 py-2 text-sm text-[#17171A] hover:border-[#620191] text-center"
+                  >
+                    Pay USD
+                  </a>
+                  <a
+                    href="https://buy.stripe.com/bJe00lcsDbLRfzjfgm3cc05"
+                    className="rounded-full border border-[#D2C8C6] px-4 py-2 text-sm text-[#17171A] hover:border-[#620191] text-center"
+                  >
+                    Pay CAD
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section id="process" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#17171A]">
+            How it works
+          </h2>
+          <ol className="mt-8 grid md:grid-cols-5 gap-4 text-sm">
+            {[
+              {
+                title: "Pay",
+                desc: "Choose USD or CAD at checkout via Stripe.",
+              },
+              {
+                title: "Book",
+                desc: "Pick a time in Zoho; get your join link instantly.",
+              },
+              {
+                title: "Prep",
+                desc: "Complete a short pre-work form so we can move fast.",
+              },
+              {
+                title: "Work",
+                desc: "Live, focused session(s) with practical outputs.",
+              },
+              {
+                title: "Ship",
+                desc: "90-day plan + assets and next steps.",
+              },
+            ].map((s, i) => (
+              <li
+                key={i}
+                className="rounded-2xl border border-[#D2C8C6] p-4 bg-[#F6F7F7]"
+              >
+                <div className="text-[#620191] font-semibold">
+                  {i + 1}. {s.title}
+                </div>
+                <div className="mt-1 text-[#463C3C]">
+                  {s.desc}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* Results */}
+      <section id="results" className="bg-[#F6F7F7]">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#17171A]">
+            Results
+          </h2>
+          <p className="mt-3 text-[#463C3C]">
+            Swap these with real testimonials/outcomes as they
+            arrive.
+          </p>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            {[
+              "Shipped a new offer and first 3 paying clients in 6 weeks.",
+              "Cut onboarding time by 40% and improved close rate.",
+              "Published a clean site + content engine in 10 days.",
+            ].map((q, i) => (
+              <figure
+                key={i}
+                className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6"
+              >
+                <blockquote className="text-[#463C3C]">
+                  "{q}"
+                </blockquote>
+                <figcaption className="mt-4 text-sm text-[#463C3C]">
+                  — Client name, role (update later)
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-2 gap-8 items-center">
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl font-semibold tracking-tight text-[#17171A]">
+              About Mahaya
+            </h2>
+            <p className="mt-3 text-[#463C3C]">
+              I help founders cut noise, make brave decisions,
+              and deliver outcomes—clear plans, focused work,
+              weekly progress.
+            </p>
+            <div className="mt-6 flex gap-3">
+              <a
+                href="#services"
+                className="inline-flex items-center rounded-full border border-[#620191] px-5 py-2.5 text-[#620191] bg-white hover:bg-[#F6F7F7]"
+              >
+                See programs
+              </a>
+              <a
+                href="mailto:mahaya@mahaya.com"
+                className="inline-flex items-center rounded-full bg-[#17171A] px-5 py-2.5 text-white hover:bg-[#463C3C]"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
+          <div className="order-1 md:order-2">
+            <ImageWithFallback
+              src={mahayaPortrait}
+              alt="Mahaya portrait"
+              className="aspect-[4/5] w-full overflow-hidden rounded-2xl object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="bg-[#F6F7F7]">
+        <div className="mx-auto max-w-6xl px-4 py-16">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#17171A]">
+            FAQ
+          </h2>
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <div className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6">
+              <h3 className="font-semibold text-[#17171A]">
+                Do you work in USD or CAD?
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                Both. Choose at checkout—each program has USD
+                and CAD links.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6">
+              <h3 className="font-semibold text-[#17171A]">
+                What happens after I pay?
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                You'll land on a page with next steps, then book
+                in Zoho and receive your join link
+                automatically.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6">
+              <h3 className="font-semibold text-[#17171A]">
+                Can we reschedule?
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                Yes—use the links in your confirmation email.
+                Clarity/Momentum ≥24h; VIP Day ≥48h.
+              </p>
+            </div>
+            <div className="rounded-2xl bg-white shadow-sm border border-[#D2C8C6] p-6">
+              <h3 className="font-semibold text-[#17171A]">
+                Refunds?
+              </h3>
+              <p className="mt-2 text-[#463C3C]">
+                Sessions are non‑refundable once delivered. If
+                you're unhappy, we'll make it right with
+                targeted support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA band */}
+      <section
+        id="cta"
+        className="bg-gradient-to-br from-[#620191] to-[#3C1E59]"
+      >
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16 text-white grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
+              Ready to build momentum?
+            </h2>
+            <p className="mt-2 text-white/90">
+              Book a session now and get a clear, practical
+              plan—no fluff, just moves.
+            </p>
+          </div>
+          <div className="flex md:justify-end gap-3">
+            <a
+              href="https://mahayacoaching.zohobookings.com/#/4698136000000045076"
+              className="inline-flex items-center rounded-full bg-white px-5 py-3 text-[#620191] hover:bg-white/90"
+            >
+              Book now
+            </a>
+            <a
+              href="mailto:mahaya@mahaya.com"
+              className="inline-flex items-center rounded-full border border-white/70 px-5 py-3 text-white hover:bg-white/10"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-white border-t border-[#D2C8C6]">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-[#463C3C]">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <div className="font-semibold text-[#17171A]">
+                Mahaya Way Coaching
+              </div>
+              <div className="mt-1">
+                Montreal / New York (remote)
+              </div>
+              <div className="mt-1">
+                <a
+                  href="mailto:mahaya@mahaya.com"
+                  className="text-[#620191] hover:text-[#3C1E59] hover:underline"
+                >
+                  mahaya@mahaya.com
+                </a>
+              </div>
+            </div>
+            <div className="text-[#463C3C]">
+              © {new Date().getFullYear()} Mahaya Way Coaching.
+              All rights reserved.
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-
-    <section id="services">
-      <h2>Services</h2>
-      <div class="card">
-        <p><strong>Clarity Sprint (2×60)</strong> — unblock top priorities fast. <a href="https://buy.stripe.com/00w7sN1NZbLRevfb063cc00">Pay</a></p>
-        <p><strong>Momentum Coaching (8 weeks)</strong> — ship the meaningful thing. <a href="https://buy.stripe.com/bJe14pbozcPV86R8RY3cc01">Pay</a></p>
-        <p><strong>VIP Day (4h)</strong> — deep dive + 90-day plan. <a href="https://buy.stripe.com/dRm6oJakvg270Ep0ls3cc02">Pay</a></p>
-      </div>
-    </section>
-
-    <section id="process">
-      <h2>Process</h2>
-      <ol>
-        <li>Book a session → confirm instantly.</li>
-        <li>Complete a 10-minute pre-work form.</li>
-        <li>We meet, make decisions, and lock execution.</li>
-      </ol>
-    </section>
-
-    <section id="results">
-      <h2>Results</h2>
-      <div class="card">Short, sharp, and practical. Clients leave with clarity, confidence, and tangible momentum.</div>
-    </section>
-
-    <section id="about">
-      <h2>About Mahaya</h2>
-      <p>I’m a strategist-operator. I jump in the trenches, bring structure, and turn fuzzy goals into your next three moves.</p>
-    </section>
-
-    <footer>
-      © <span id="y"></span> The Haya Way Coaching • <a href="https://calendly.com/mahaya/30min">Book now</a>
-    </footer>
-  </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body>
-</html>
+  );
+}
