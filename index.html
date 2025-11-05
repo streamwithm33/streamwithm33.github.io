@@ -38,6 +38,62 @@
     .card{background:#fff;border:1px solid var(--sand);border-radius:14px;padding:18px}
     footer{border-top:1px solid var(--sand);padding:24px 0;font-size:14px;color:#6b6b6b}
     @media (max-width:900px){.hero{grid-template-columns:1fr}}
+  /* --- Header Layout --- */
+.site-header {
+  /* Ensures logo and text align perfectly vertically */
+.site-header img {
+  vertical-align: middle;
+}
+display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  background: #fff;
+}
+
+/* Left: logo */
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Center navigation */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Right: Book now button */
+.btn {
+  background-color: #3c1e59;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #620191;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .topnav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn {
+    margin-top: 8px;
+  }
+}
+
   </style>
 </head>
 <body>
